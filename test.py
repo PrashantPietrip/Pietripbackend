@@ -829,7 +829,7 @@ def SearchSchema(checkindate: str, checkoutdate: str, rooms: str, adults: str, c
 @app.post("/SearchID Hotel")
 def SearchID(search:str):
     headers = {
-    'apikey': TJ_KEY,
+    'apikey': "1122105735e4d1-f4ca-47aa-849d-67e6ec304a22",
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin':'*',
     'Access-Control-Allow-Headers':'Content-Type,Authorization',
@@ -855,7 +855,7 @@ def SearchID(search:str):
 @app.get("/HotelDetails Hotel")
 def Details(searchid:str):
     headers = {
-    'apikey': TJ_KEY,
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin':'*',
     'Access-Control-Allow-Headers':'Content-Type,Authorization',
@@ -885,7 +885,7 @@ def Details(searchid:str):
 @app.post("/CancellationPolicy Hotel")
 def CancellationPolicy(hotelid:str,optionid:str):
     headers = {
-    'apikey': TJ_KEY,
+    'apikey': "1122105735e4d1-f4ca-47aa-849d-67e6ec304a22",
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin':'*',
     'Access-Control-Allow-Headers':'Content-Type,Authorization',
@@ -916,7 +916,7 @@ def CancellationPolicy(hotelid:str,optionid:str):
 @app.get("/Review Hotel")
 def Review(hotelid:str,optionid:str):
     headers = {
-    'apikey': TJ_KEY,
+    'apikey': "1122105735e4d1-f4ca-47aa-849d-67e6ec304a22",
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin':'*',
     'Access-Control-Allow-Headers':'Content-Type,Authorization',

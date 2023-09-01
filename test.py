@@ -431,7 +431,13 @@ def OnewaySearch(cabinclass:str,adults:int,childs:int,infants:int,source:str,des
         }
         })
     url = "https://apitest.tripjack.com/fms/v1/air-search-all"
-    headers = {'Content-Type': 'application/json','apikey': TJ_KEY}
+    headers = {
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Headers':'Content-Type,Authorization',
+    'Access-Control-Allow-Methods':'*'
+    }
     final = requests.request("POST", url, headers=headers, data=payload)
     if final.ok:
         res = final.json()
@@ -500,7 +506,13 @@ def ReturnSearch(cabinclass:str,adults:int,childs:int,infants:int,source:str,des
         }
         })
     url = "https://apitest.tripjack.com/fms/v1/air-search-all"
-    headers = {'Content-Type': 'application/json','apikey': TJ_KEY}
+    headers  ={
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Headers':'Content-Type,Authorization',
+    'Access-Control-Allow-Methods':'*'
+    }
     final = requests.request("POST", url, headers=headers, data=payload)
     if final.ok:
         res = final.json()
@@ -551,7 +563,13 @@ def Search():
     global shared_response
     response = json.dumps(shared_response)
     url = "https://apitest.tripjack.com/fms/v1/air-search-all"
-    headers = {'Content-Type': 'application/json','apikey': TJ_KEY}
+    headers ={
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Headers':'Content-Type,Authorization',
+    'Access-Control-Allow-Methods':'*'
+    }
     if shared_response:
         final = requests.request("POST", url, headers=headers, data=response)
         res = final.json()
@@ -562,7 +580,13 @@ def Search():
 @app.post("/Review Flight")
 def Review(priceIds:list):
     url = "https://apitest.tripjack.com/fms/v1/review"
-    headers = {'Content-Type': 'application/json','apikey': TJ_KEY}
+    headers = {
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Headers':'Content-Type,Authorization',
+    'Access-Control-Allow-Methods':'*'
+    }
     payload = json.dumps({"priceIds": priceIds})
     response = requests.request("POST", url, headers=headers, data=payload)
     if response.ok:
@@ -581,7 +605,13 @@ def Review(priceIds:list):
 @app.get("/Fare Rule Flight")
 def Farerule(id:str,flowtype:str):
     url = "https://apitest.tripjack.com/fms/v1/farerule"
-    headers = {'Content-Type': 'application/json','apikey': TJ_KEY}
+    headers = {
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Headers':'Content-Type,Authorization',
+    'Access-Control-Allow-Methods':'*'
+    }
     payload = json.dumps({"id": id,"flowType": flowtype})
     response = requests.request("POST", url, headers=headers, data=payload)
     if response.ok:
@@ -592,7 +622,13 @@ def Farerule(id:str,flowtype:str):
 @app.get("/Seat Map Flight")
 def Seatmap(bookingid:str):
     url = "https://apitest.tripjack.com/fms/v1/seat"
-    headers = {'Content-Type': 'application/json','apikey': TJ_KEY}
+    headers   = {
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Headers':'Content-Type,Authorization',
+    'Access-Control-Allow-Methods':'*'
+    }
     payload = json.dumps({"bookingId": bookingid})
     response = requests.request("POST", url, headers=headers, data=payload)
     if response.ok:
@@ -605,9 +641,12 @@ def Seatmap(bookingid:str):
 @app.post("/Booking and Hold Booking")
 def Booking(payload: dict):
     url = "https://apitest.tripjack.com/oms/v1/air/book"
-    headers = {
-        'Content-Type': 'application/json',
-        'apikey': TJ_KEY
+    headers  = {
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Headers':'Content-Type,Authorization',
+    'Access-Control-Allow-Methods':'*'
     }
     
     try:
@@ -621,7 +660,13 @@ def Booking(payload: dict):
 @app.get("/Fare Validate Flight")
 def Validate(bookingid:str):
     url = "https://apitest.tripjack.com/oms/v1/air/fare-validate"
-    headers = {'Content-Type': 'application/json','apikey': TJ_KEY}
+    headers =   {
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Headers':'Content-Type,Authorization',
+    'Access-Control-Allow-Methods':'*'
+    }
     payload = json.dumps({"bookingId": bookingid})
     response = requests.request("POST", url, headers=headers, data=payload)
     if response.ok:
@@ -632,7 +677,13 @@ def Validate(bookingid:str):
 @app.get("/Confirm Book Flight")
 def Confirm(bookingid:str,amount:float):
     url = "https://apitest.tripjack.com/oms/v1/air/confirm-book"
-    headers = {'Content-Type': 'application/json','apikey': TJ_KEY}
+    headers = {
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Headers':'Content-Type,Authorization',
+    'Access-Control-Allow-Methods':'*'
+    }
     payload = json.dumps({"bookingId": bookingid,"paymentInfos": [{"amount": amount}]})
     response = requests.request("POST", url, headers=headers, data=payload)
     if response.ok:
@@ -647,7 +698,13 @@ def Confirm(bookingid:str,amount:float):
 @app.get("/Booking Details Flight")
 def Bookingdetails(bookingid:str):
     url = "https://apitest.tripjack.com/oms/v1/booking-details"
-    headers = {'Content-Type': 'application/json','apikey': TJ_KEY}
+    headers = {
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Headers':'Content-Type,Authorization',
+    'Access-Control-Allow-Methods':'*'
+    }
     payload = json.dumps({"bookingId": bookingid})
     response = requests.request("POST", url, headers=headers, data=payload)
     if response.ok:
@@ -657,7 +714,13 @@ def Bookingdetails(bookingid:str):
 @app.get("/Booking Details with Pax Pricing Flight")
 def Bookingdetails(bookingid:str):
     url = "https://apitest.tripjack.com/oms/v1/booking-details"
-    headers = {'Content-Type': 'application/json','apikey': TJ_KEY}
+    headers =  {
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Headers':'Content-Type,Authorization',
+    'Access-Control-Allow-Methods':'*'
+    }
     payload = json.dumps({"bookingId": bookingid,"requirePaxPricing": True})
     response = requests.request("POST", url, headers=headers, data=payload)
     if response.ok:
@@ -667,7 +730,13 @@ def Bookingdetails(bookingid:str):
 @app.get("/Release PNR Flight")
 def ReleasePNR(bookingid:str,pnrs:list):
     url =  "https://apitest.tripjack.com/oms/v1/air/unhold"
-    headers = {'Content-Type': 'application/json','apikey': TJ_KEY}
+    headers =   {
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Headers':'Content-Type,Authorization',
+    'Access-Control-Allow-Methods':'*'
+    }
     payload = json.dumps({"bookingId":bookingid,"pnrs":pnrs})
     response = requests.request("POST", url, headers=headers, data=payload)
     if response.ok:
@@ -677,7 +746,13 @@ def ReleasePNR(bookingid:str,pnrs:list):
 @app.get("/User Balance Flight")
 def Userbalance(apikey:str):
     url =  "https://apitest.tripjack.com/ums/v1/user-detail" 
-    headers = {'Content-Type': 'application/json','apikey': TJ_KEY}
+    headers =  {
+    'apikey': '1122105735e4d1-f4ca-47aa-849d-67e6ec304a22',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Headers':'Content-Type,Authorization',
+    'Access-Control-Allow-Methods':'*'
+    }
     payload = {}
     response = requests.request("POST", url, headers=headers, data=payload)
     if response.ok:
@@ -971,7 +1046,7 @@ def CreateTransaction(amount:float,  currency: str):
         }
 
     #Client instance
-    client = CryptoPayments(API_KEY, API_SECRET, IPN_URL)
+    client = CryptoPayments("58652ac636c2f9b4806e30cddbf90018a0fe920d5d2dcd49f7c93839dae670f5", "3e7f08B845FbcAa815Af72e08B8955F45f15ee4Ae467af1460E8C6Da10a176ae", "")
 
     #make the call to createTransaction crypto payments API
     transactionBTC = client.createTransaction(create_transaction_params_BTC)
